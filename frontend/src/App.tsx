@@ -11,6 +11,7 @@ import Complaint from "./pages/Complaint";
 import Login from "./pages/Login";
 import EnterEmailReset from "./components/EnterEmailReset";
 import ResetPassword from "./components/ResetPassword";
+import ChangePassword from "./pages/ChangePassword";
 
 const queryClient = new QueryClient();
 
@@ -76,6 +77,10 @@ const App = () => {
           />
           <Route path="/EnterEmailReset" element={<EnterEmailReset />} />
           <Route path="/ResetPassword/:email" element={<ResetPassword />} />
+          <Route
+            path="/changePassword"
+            element={logged ? <ChangePassword /> : <Navigate to="/login" />}
+          />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

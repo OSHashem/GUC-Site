@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { IconButton } from "@mui/material";
+import { List,ListItemText, ListItem, ListItemButton } from "@mui/material";
+import ChangePasswordComponent from "./ChangePasswordComponent";
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: "#1c0b0b",
@@ -105,24 +106,16 @@ const Navbar = () => {
           >
             <StyledMenuItem>Complaints</StyledMenuItem>
           </Box>
-          {/* code for logout icon */}
-          <Box
-            sx={{
-              marginLeft: 40,
-            }}
-          >
-            <IconButton onClick={handleLogout}>
-              <LogoutIcon
-                sx={{
-                  color: "white",
-                  "&:hover": {
-                    backgroundColor: "#F57C00", // Change background color on hover
-                    boxShadow: 6, // Increase shadow on hover
-                  },
-                }}
-              />
-            </IconButton>
-          </Box>
+          <List>
+      <ListItem >
+      <ChangePasswordComponent/>
+      <ListItemText primary="Change Password" />
+      </ListItem>
+      <ListItemButton  onClick={handleLogout}>
+        <LogoutIcon />
+        <ListItemText primary="Logout" />
+      </ListItemButton>
+    </List>
         </Box>
       </Toolbar>
     </StyledAppBar>

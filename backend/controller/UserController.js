@@ -156,10 +156,18 @@ const resetPassword = asyncHandler(async (req,res) => {
 })
 
 const changePassword = async (req,res) => {
+    console.log("This is changePass backend");
+    console.log(req);
+    console.log(req.user);
+
+    
     const email = req.user.email
     const role = req.user.role
     const {currentPassword,newPassword,confirmPassword} = req.body
     var currentComparedPassword
+    console.log("This is the current pass:",currentPassword);
+
+    
     try {
         currentComparedPassword = await User.findOne({email}).select('password')
     }
@@ -187,6 +195,7 @@ const changePassword = async (req,res) => {
             await Admin.findOneAndUpdate({email},{password:newPassword})
         }
         res.clearCookie('token')
+    console.log("This is the newPassword:",newPassword);
         return res.status(200).json("Password changed successfully we recommend closing the browser!")
     }
     catch (error){
