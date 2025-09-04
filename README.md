@@ -1,6 +1,6 @@
 # GUC-Site
 
-This project is a full-stack web application developed for the German University in Cairo (GUC). The application serves multiple roles and functionalities for different user types, including professors and admins. It provides a comprehensive system for managing evaluations,announcements, conferences, funds, complaints, and file links.
+This project is a full-stack web application developed as part of our internship at the German University in Cairo (GUC). The application serves multiple roles and functionalities for different user types, including professors and admins. It provides a comprehensive system for managing evaluations,announcements, conferences, funds, complaints, and file links.
 
 ## Table of Contents
 
